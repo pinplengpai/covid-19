@@ -8,8 +8,9 @@ export default function DataFetching(){
     const response = await axios.get(
         'https://covid19-cdn.workpointnews.com/api/trend.json'
       );
-    console.log(response);
-    setData(response.data);
+    // console.log(response);
+    setData(Object.entries(response.data))
+    // console.log("data",setData(response.data));
   }
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function DataFetching(){
   return (
     <div>
       <ul>
-        {data.map(data => <li>{data.deaths}</li>
+        {data && data.map((data, key) => <li key={key}>{(data[1].deaths)}</li>
       )}
       </ul>
     </div>
