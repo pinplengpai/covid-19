@@ -1,34 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import DataFetching from './components/DataFetching'
 
-
-
-const useFetch = (url) => {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(async() => {
-        const response = await fetch(url);
-        const data = await response.json();
-        const [item] = data.results;
-        setData(item);
-        setLoading(false);
-
-    },[]);
-
-    return{data, loading}
-
-}
-export default () => {
-    const [count, setCount] = useState(0);
-    const {data, loading} = useFetch("https://api.randomuser.me/");
- 
-
+function App () {
     return (
-        <div> 
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count +1)}>Clicke me</button>
-            {loading ? <div>...loading</div> : <div>{data.name.first}</div>}
+        <div>
+            <DataFetching />
         </div> 
+    )
+}
 
-    );
-};
+export default App
