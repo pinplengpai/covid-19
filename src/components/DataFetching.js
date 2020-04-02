@@ -1,29 +1,30 @@
-import React, {useState, useEffect} from 'react'; 
+import React, { useState,useEffect } from "react";
 import axios from 'axios';
 
-function DataFetching(){
+export default function DataFetching(){
+  const [data, setData] = useState([]);
 
+  async function getData() {
+    const response = await axios.get(
+        'https://covid19-cdn.workpointnews.com/api/trend.json'
+      );
+    console.log(response);
+    setData(response.data);
+  }
 
-  const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get('https://covid19-cdn.workpointnews.com/api/trend.json')
-      .then(res => {
-        console.log(res)
-        setPosts(res.data)
-      })
-  })
+    getData();
+  }, []);
+    
   return (
     <div>
       <ul>
-        {posts.map(post => <li>{post.deaths}</li>
-        )}
+        {data.map(data => <li>{data.deaths}</li>
+      )}
       </ul>
-
     </div>
   )
 }
-
-export default DataFetching
 
 
 // import axious from "axios";
