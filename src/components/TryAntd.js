@@ -1,11 +1,12 @@
 import React from 'react';
-import { drawer } from 'styled';
-import styled, { css } from 'styled-components';
-import { SurveyCard } from '../styles';
+import styled, { css } from 'styled-components'
+import { Card, Divider } from 'antd'
+import { TryCard } from 'styles';
+
 
 
 const CardExample = styled(Card)`
-    background= "red";
+    background-color = #ead7df;
     border-radius: 10px;
 
     .ant-card-body {
@@ -13,8 +14,8 @@ const CardExample = styled(Card)`
     } 
 `
 
-function CardEx() {
-    <SurveyCard
-    
-    >
-}
+// export default function TryAntd() {
+//     return (
+     
+//     )
+// }
