@@ -18,11 +18,8 @@ const HeaderContainer = styled(Layout.Header)`
         text-decoration: none;
         color: black;
     }
-
-
     
 `
-
 function Header() {
     return (
         <HeaderContainer>
