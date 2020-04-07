@@ -10,7 +10,7 @@ import {
     ResponsiveContainer
   } from 'recharts';
 
-function TimeSeries(){
+function ThaiTimeSeries(){
   const [data, setData] = useState([]);
 
   async function TimeSeriesFetching() {
@@ -43,4 +43,4 @@ function TimeSeries(){
   )
 }
 
-export default TimeSeries;
+export default ThaiTimeSeries;

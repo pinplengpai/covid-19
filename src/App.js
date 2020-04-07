@@ -1,15 +1,16 @@
 import React from "react";
-import DataFetching from './components/DataFetching';
-import Header from './components/Header';
-import TimeSeries from './components/TimeSeries';
+import { BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import ThaiData from './components/ThaiData';
+import WorldWideData from './components/WorldWideData';
 
 function App () {
     return (
-        <div>
-            <Header />
-            <DataFetching />
-            <TimeSeries data={TimeSeries.Thailand}/>
-        </div> 
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact component={ThaiData} />
+                <Route path="/worldwide" exact component={WorldWideData}/>
+            </Switch>
+        </BrowserRouter>
     )
 }
 

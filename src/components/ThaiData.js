@@ -1,7 +1,10 @@
 import React, { useState,useEffect } from "react";
+import Header from './Header';
+import ThaiTimeSeries from './ThaiTimeSeries';
 import axios from 'axios';
 
-function DataFetching(){
+
+function ThaiData(){
   const [data, setData] = useState([]);
 
   async function ConstantDataThai() {
@@ -17,10 +20,13 @@ function DataFetching(){
     
   return (
     <div>
-      <p>Total cases: {data.ผู้ติดเชื้อ}</p>
-      <p>Recovered: {data.หายแล้ว}</p>
-      <p>Deaths: {data.เสียชีวิต}</p>
-      <p>Today: {data.โน๊ตผู้ติดเชื้อ}</p>
+      <Header />
+        <p>Total cases: {data.ผู้ติดเชื้อ}</p>
+        <p>Recovered: {data.หายแล้ว}</p>
+        <p>Deaths: {data.เสียชีวิต}</p>
+        <p>Today: {data.โน๊ตผู้ติดเชื้อ}</p>
+      <ThaiTimeSeries />
+
         {/* <ul>
         {data && data.map((data, key) => <li key={key}> Deaths: {(data[1].deaths)}</li>)}
 
@@ -30,4 +36,4 @@ function DataFetching(){
   )
 }
 
-export default DataFetching;
+export default ThaiData;
