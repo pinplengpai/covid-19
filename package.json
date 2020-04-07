@@ -10,8 +10,11 @@
     "axios": "^0.19.2",
     "axios-hooks": "^1.9.0",
     "react": "^16.13.1",
+    "react-data-table-component": "^6.4.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "recharts": "^1.8.5",
+    "reqwest": "^2.0.5",
     "styled-components": "^5.0.1"
   },
   "scripts": {
