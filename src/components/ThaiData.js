@@ -6,12 +6,13 @@ import axios from 'axios';
 
 function ThaiData(){
   const [data, setData] = useState([]);
+  const [loading, isLoading] = useState(false);
 
   async function ConstantDataThai() {
     const url = 'https://covid19-cdn.workpointnews.com/api/constants.json?'
     const response = await axios.get(url);
     setData(response.data)
-    // setData(Object.entries(response.data))
+    isLoading(false)
   }
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function ThaiData(){
   }, []);
     
   return (
-    <div>
+    <div className='container'>
       <Header />
         <p>Total cases: {data.ผู้ติดเชื้อ}</p>
         <p>Recovered: {data.หายแล้ว}</p>

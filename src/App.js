@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import ThaiData from './components/ThaiData';
 import WorldWideData from './components/WorldWideData';
 
