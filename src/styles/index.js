@@ -12,13 +12,6 @@ export const Body = styled.div`
 `
 
 export const Loading = styled.div`
-    .wrapper {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .lds-ring {
         display: inline-block;
         position: relative;

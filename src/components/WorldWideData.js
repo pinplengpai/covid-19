@@ -1,7 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import Header from './Header';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fas spinner } from '@fortawesome/free-solid-svg-icons'
+import { Loading } from '../styles/index'
 import axios from 'axios';
 import {
     LineChart,
@@ -35,7 +34,7 @@ function WorldWide() {
             <Header />
             <div> 
                 <h2>WorldWide</h2>
-                {isLoading && <div><FontAwesomeIcon icon="spinner"/></div> }
+                {isLoading && <div><Loading /> </div> }
                 {!isLoading && data.Global !== undefined && <p>New confirmed - {data.Global.TotalConfirmed}</p>}
                 {/* <p>Total confirmed - {data && data[0] && data[0][1].TotalConfirmed}</p>
                 <p>New Deaths - {data && data[0] && data[0][1].NewDeaths}</p>
