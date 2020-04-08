@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { Card, Layout } from 'antd';
 
 
 export const Body = styled.div`
@@ -10,6 +11,30 @@ export const Body = styled.div`
     width: 100vw;
     background-color: red;
 `
+
+export const ContentContainer = styled(Layout.Content)`
+    margin: 0 3% 3% 3%;
+`
+
+export const ReportCard = styled(Card)`
+    width: 300px;
+    background-color: pink;
+    border-radius: 10px;
+    padding: 10px;
+        .site-card-border-less-wrapper {
+            background: black;
+            padding: 30px;
+        }
+        .ant-card-head-title{
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .ant-card-body p {
+            text-align: center;
+        }
+`
+
 
 export const Loading = styled.div`
     .lds-ring {

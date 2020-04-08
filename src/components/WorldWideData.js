@@ -1,6 +1,5 @@
 import React, { useState, useEffect }from 'react';
 import Header from './Header';
-import { Loading } from '../styles/index'
 import axios from 'axios';
 import {
     LineChart,
@@ -32,16 +31,20 @@ function WorldWide() {
     return(
         <>
             <Header />
-            <div> 
+
                 <h2>WorldWide</h2>
-                {isLoading && <div><Loading /> </div> }
-                {!isLoading && data.Global !== undefined && <p>New confirmed - {data.Global.TotalConfirmed}</p>}
-                {/* <p>Total confirmed - {data && data[0] && data[0][1].TotalConfirmed}</p>
-                <p>New Deaths - {data && data[0] && data[0][1].NewDeaths}</p>
-                <p>Total Deaths - {data && data[0] && data[0][1].TotalDeaths}</p>
-                <p>New Recovered - {data && data[0] && data[0][1].NewRecovered}</p>
-                <p>Total Recovered - {data && data[0] && data[0][1].TotalRecovered}</p>   */}
-            </div>
+                {isLoading && <div> Loading ... </div> }
+                {!isLoading && data.Global !== undefined && 
+                <div>
+                    <p>New confirmed - {data.Global.NewConfirmed}</p>
+                    <p>Total confirmed - {data.Global.TotalConfirmed}</p>
+                    <p>New Deaths - {data.Global.NewDeaths}</p>
+                    <p>Total Deaths - {data.Global.TotalDeaths}</p>
+                    <p>New Recovered - {data.Global.NewRecovered}</p>
+                    <p>Total Recovered - {data.Global.TotalRecovered}</p>  
+                </div>
+                }
+     
 
                 <ResponsiveContainer width="100%" height={500}>
                     <LineChart width={800} height={500} data={data.Countries}>
