@@ -11,9 +11,7 @@ const Box = styled.div`
   justify-content: space-around;
 `
 
-const Roww = styled(Row)`
-  margin-top: 3%;
-`
+
 
 
 function ThaiData(){

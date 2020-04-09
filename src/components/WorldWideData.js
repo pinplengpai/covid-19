@@ -14,6 +14,10 @@ import styled , { css } from 'styled-components';
 import { Row, Col } from 'antd'
 import { ReportCard, ContentContainer} from '.././styles/index';
 
+const Box = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
 
 function WorldWide() {
     const [data, setData] = useState([]);
@@ -35,23 +39,40 @@ function WorldWide() {
         <>
         <Header />
             <ContentContainer>
-                <h2>WorldWide</h2>
                 <Row gutter={[16, 16]}  style={{ marginTop: '3%' }}>
                 {isLoading && <div> Loading ... </div> }
                 {!isLoading && data.Global !== undefined && 
                     <Box>
-                        <Col xl={6} sm={12}><ReportCard title="Total Cases" bordered={false} style={{ 'background-color': '#c6afa3' }}></ReportCard><p>- {data.Global.NewConfirmed}</p></Col>
-                        <p>Total confirmed - {data.Global.TotalConfirmed}</p>
-                        <p>New Deaths - {data.Global.NewDeaths}</p>
-                        <p>Total Deaths - {data.Global.TotalDeaths}</p>
-                        <p>New Recovered - {data.Global.NewRecovered}</p>
-                        <p>Total Recovered - {data.Global.TotalRecovered}</p>  
+                        <Col xl={8} sm={12}><ReportCard title="New Cases" bordered={false} style={{ 'background-color': '#9DB4CC' }}>
+                            <p>{data.Global.NewConfirmed}</p></ReportCard>
+                        </Col>
+                        <Col xl={8} sm={12}><ReportCard title="Total confirmed" bordered={false} style={{ 'background-color': '#C6AFA3' }}>
+                            <p>{data.Global.TotalConfirmed}</p></ReportCard>
+                        </Col>
+                        <Col xl={8} sm={12}><ReportCard title="New Deaths" bordered={false} style={{ 'background-color': '#d3adba' }}>
+                            <p>{data.Global.NewDeaths}</p></ReportCard>
+                        </Col>
+
                     </Box>
                 }
                 </Row>
-    
+                <Row gutter={[16, 16]}>
+                    {data.Global !== undefined && 
+                    <Box>
+                        <Col xl={8} sm={12}><ReportCard title="Total Deaths" bordered={false} style={{ 'background-color': '#B78798' }}>
+                            <p>{data.Global.TotalDeaths}</p></ReportCard>
+                        </Col>
+                        <Col xl={8} sm={12}><ReportCard title="New Recovered" bordered={false} style={{ 'background-color': '#cce0d6' }}>
+                            <p>{data.Global.NewRecovered}</p></ReportCard>
+                        </Col>
+                        <Col xl={8} sm={12}><ReportCard title="Total Recovered" bordered={false} style={{ 'background-color': '#A2C4B4' }}>
+                            <p>{data.Global.TotalRecovered}</p></ReportCard>
+                        </Col>
+                    </Box>
+                    }           
+                </Row>
 
-                <ResponsiveContainer width="100%" height={500}>
+                <ResponsiveContainer width="90%" height={500}>
                     <LineChart width={800} height={500} data={data.Countries}>
                         <XAxis dataKey="Country"/>
                         <YAxis/>
