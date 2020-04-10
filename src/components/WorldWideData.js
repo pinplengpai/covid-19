@@ -2,8 +2,8 @@ import React, { useState, useEffect }from 'react';
 import Header from './Header';
 import axios from 'axios';
 import { Row, Col } from 'antd';
-import { ReportCard, ContentContainer,Box} from '.././styles/index';
-import DataChart from './DataChart'
+import { ReportCard, ContentContainer,Box, MiniBox} from '.././styles/index';
+import DataChart from './DataChart';
 
 
 
@@ -28,7 +28,7 @@ function WorldWide() {
         <>
         <Header />
             <ContentContainer>
-                <Row gutter={[16, 8]}  style={{ marginTop: '3%' }}>
+                <Row style={{ marginTop: '3%' }}>
                 {isLoading && <div> Loading ... </div> }
                 {!isLoading && data.Global !== undefined && 
                     <Box>
@@ -41,10 +41,19 @@ function WorldWide() {
                         <Col span={8}><ReportCard title="New Deaths" bordered={false} bgcolor={['#d3adba']} >
                             <p>{data.Global.NewDeaths}</p></ReportCard>
                         </Col>
+                        <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
+                            <p>{data.Global.TotalDeaths}</p></ReportCard>
+                        </Col>
+                        <Col span={8}><ReportCard title="New Recovered" bordered={false} bgcolor={['#cce0d6']}>
+                            <p>{data.Global.NewRecovered}</p></ReportCard>
+                        </Col>
+                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#A2C4B4']}>
+                            <p>{data.Global.TotalRecovered}</p></ReportCard>
+                        </Col>
                     </Box>
                 }
                 </Row>
-                <Row gutter={[16, 8]}  style={{ marginTop: '3%' }}>
+                {/* <Row gutter={[16, 8]}  style={{ marginTop: '3%' }}>
                 {!isLoading && data.Global !== undefined && 
                     <Box>
                         <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
@@ -58,9 +67,29 @@ function WorldWide() {
                         </Col>
                     </Box>
                 }
-                </Row>
+                </Row> */}
                 <DataChart data={data.Countries}/>
-            </ContentContainer>           
+
+                <Row>
+                    <Box>
+                        <Col span={12}>
+                            <MiniBox />
+                        </Col>
+                        <Col span={12}>
+                            <MiniBox style={{ backgroundColor: 'red' }}/>
+                        </Col>
+                        <Col span={12}>
+                            <MiniBox style={{ backgroundColor: 'yellow' }}/>
+                        </Col>
+                        <Col span={12}>
+                            <MiniBox style={{ backgroundColor: 'green' }}/>
+                        </Col>
+                    </Box>
+                </Row>    
+          
+            </ContentContainer>    
+
+                   
         </>
     )
 }

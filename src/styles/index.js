@@ -15,7 +15,6 @@ export const ContentContainer = styled(Layout.Content)`
 `
 
 export const ReportCard = styled(Card)`
-    width: 300px;
     background-color: ${props=> props.bgcolor};
     border-radius: 10px;
     padding: 10px;
@@ -36,6 +35,12 @@ export const ReportCard = styled(Card)`
 export const Box = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 100%;
 
+`
+
+export const MiniBox = styled(Card)`
+  background-color: blue;
+  border-radius: 10px;
+  height: 100px;
+  width: 20px;
 `
