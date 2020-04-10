@@ -42,5 +42,5 @@ export const MiniBox = styled(Card)`
   background-color: blue;
   border-radius: 10px;
   height: 100px;
-  width: 20px;
+  width: 220px;
 `

@@ -1,12 +1,10 @@
 import React, { useState, useEffect }from 'react';
 import Header from './Header';
 import axios from 'axios';
-import { Row, Col } from 'antd';
+import { Row, Col} from 'antd';
 import { ReportCard, ContentContainer,Box, MiniBox} from '.././styles/index';
 import DataChart from './DataChart';
-
-
-
+import BarChart from './BarChart';
 
 function WorldWide() {
     const [data, setData] = useState([]);
@@ -86,9 +84,9 @@ function WorldWide() {
                         </Col>
                     </Box>
                 </Row>    
-          
-            </ContentContainer>    
 
+                <BarChart data={data.Countries} />
+            </ContentContainer>    
                    
         </>
     )
