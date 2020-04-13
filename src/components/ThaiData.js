@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import Header from './Header';
 import ThaiTimeSeries from './ThaiTimeSeries';
+import CaseStat from './CaseStat';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Row, Col } from 'antd'
@@ -11,9 +12,6 @@ const Box = styled.div`
   // justify-content: space-around;
   width: 100%;
 `
-
-
-
 
 function ThaiData(){
   const [data, setData] = useState([]);
@@ -63,6 +61,7 @@ function ThaiData(){
               }
           </Row>
           <ThaiTimeSeries />
+          <CaseStat />
         </ContentContainer>
     </>
   )

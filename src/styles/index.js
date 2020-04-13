@@ -40,7 +40,5 @@ export const Box = styled.div`
 
 export const MiniBox = styled(Card)`
   background-color: blue;
-  border-radius: 10px;
   height: 100px;
-  width: 220px;
 `

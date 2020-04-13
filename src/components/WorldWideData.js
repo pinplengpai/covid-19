@@ -5,7 +5,6 @@ import { Row, Col} from 'antd';
 import { ReportCard, ContentContainer,Box, MiniBox} from '.././styles/index';
 import DataChart from './DataChart';
 import BarChart from './BarChart';
-import ScatterChart from './ScatterChart';
 
 function WorldWide() {
     const [data, setData] = useState([]);
@@ -13,12 +12,15 @@ function WorldWide() {
 
     async function GlobalData() {
         setIsLoading(true)
-        const url = 'https://api.covid19api.com/summary'
+        const url = 'https://covid19-cdn.workpointnews.com/api/world.json'
         const response = await axios.get(url);
         setData(response.data)
         setIsLoading(false)
     }
+
+    console.log(data.statistics)
     
+
     useEffect(() => {
         GlobalData();
     }, []);
@@ -29,18 +31,18 @@ function WorldWide() {
             <ContentContainer>
                 <Row style={{ marginTop: '3%' }}>
                 {isLoading && <div> Loading ... </div> }
-                {!isLoading && data.Global !== undefined && 
+                {!isLoading && data !== undefined && 
                     <Box>
-                        <Col span={8}><ReportCard title="New Cases" bordered={false}  bgcolor={['#9DB4CC']} >
-                            <p>{data.Global.NewConfirmed}</p></ReportCard>
+                        <Col span={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={['#9DB4CC']} >
+                            <p>{data.totalDeaths}</p></ReportCard>
                         </Col>
                         <Col span={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={['#C6AFA3']} >
-                            <p>{data.Global.TotalConfirmed}</p></ReportCard>
+                            <p>{data.totalConfirmed}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="New Deaths" bordered={false} bgcolor={['#d3adba']} >
-                            <p>{data.Global.NewDeaths}</p></ReportCard>
+                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#d3adba']} >
+                            <p>{data.totalRecovered}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
+                        {/* <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
                             <p>{data.Global.TotalDeaths}</p></ReportCard>
                         </Col>
                         <Col span={8}><ReportCard title="New Recovered" bordered={false} bgcolor={['#cce0d6']}>
@@ -48,46 +50,32 @@ function WorldWide() {
                         </Col>
                         <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#A2C4B4']}>
                             <p>{data.Global.TotalRecovered}</p></ReportCard>
-                        </Col>
+                        </Col> */}
                     </Box>
                 }
                 </Row>
-                {/* <Row gutter={[16, 8]}  style={{ marginTop: '3%' }}>
-                {!isLoading && data.Global !== undefined && 
-                    <Box>
-                        <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
-                            <p>{data.Global.TotalDeaths}</p></ReportCard>
-                        </Col>
-                        <Col span={8}><ReportCard title="New Recovered" bordered={false} bgcolor={['#cce0d6']}>
-                            <p>{data.Global.NewRecovered}</p></ReportCard>
-                        </Col>
-                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#A2C4B4']}>
-                            <p>{data.Global.TotalRecovered}</p></ReportCard>
-                        </Col>
-                    </Box>
-                }
-                </Row> */}
+               
                 <DataChart data={data.Countries}/>
 
+                <BarChart data={data.Countries} />
+
                 <Row>
-                    <Box>
-                        <Col span={12}>
+                        <Col xl={6} sm={12}>  
                             <MiniBox />
                         </Col>
-                        <Col span={12}>
+                        <Col xl={6} sm={12}>
+                        
                             <MiniBox style={{ backgroundColor: 'red' }}/>
                         </Col>
-                        <Col span={12}>
+                        <Col xl={6} sm={12}>
+                        
                             <MiniBox style={{ backgroundColor: 'yellow' }}/>
                         </Col>
-                        <Col span={12}>
+                        <Col xl={6} sm={12}>
                             <MiniBox style={{ backgroundColor: 'green' }}/>
                         </Col>
-                    </Box>
                 </Row>    
 
-                <BarChart data={data.Countries} />
-                <ScatterChart data={data.Countries} />
             </ContentContainer>    
                    
         </>
