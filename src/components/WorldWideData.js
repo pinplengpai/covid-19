@@ -5,6 +5,7 @@ import { Row, Col} from 'antd';
 import { ReportCard, ContentContainer,Box, MiniBox} from '.././styles/index';
 import DataChart from './DataChart';
 import BarChart from './BarChart';
+import ScatterChart from './ScatterChart';
 
 function WorldWide() {
     const [data, setData] = useState([]);
@@ -86,6 +87,7 @@ function WorldWide() {
                 </Row>    
 
                 <BarChart data={data.Countries} />
+                <ScatterChart data={data.Countries} />
             </ContentContainer>    
                    
         </>
