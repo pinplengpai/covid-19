@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import Header from './Header';
 import ThaiTimeSeries from './ThaiTimeSeries';
 import CaseStat from './CaseStat';
+import PieChart from './PieChart';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Row, Col } from 'antd'
@@ -62,6 +63,7 @@ function ThaiData(){
           </Row>
           <ThaiTimeSeries />
           <CaseStat />
+          <PieChart />
         </ContentContainer>
     </>
   )

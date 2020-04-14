@@ -18,9 +18,6 @@ function WorldWide() {
         setIsLoading(false)
     }
 
-    console.log(data.statistics)
-    
-
     useEffect(() => {
         GlobalData();
     }, []);

@@ -23,6 +23,17 @@ function CaseStat(){
     setIsLoading(false)
   }
 
+  console.log(
+      data && data.records && data.records.map(item =>{
+        if (item.gender === "ชาย") {
+            item.gender1 = item.gender || "ชาย";
+          } else if (item.gender === "หญิง") {
+            item.gender2 = item.gender || "หญิง";
+          }
+        return item;
+        })
+    )  
+
   useEffect(() => {
     CaseStatFetching();
   }, []);
