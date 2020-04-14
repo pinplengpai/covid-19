@@ -27,7 +27,7 @@ function ThaiTimeSeries(){
 //   <p>{JSON.stringify(data.Thailand)}</p>
     <div>
         <h2>Trend of cases in Thailand</h2>
-        <ResponsiveContainer width="100%" height={500}>
+        <ResponsiveContainer width="90%" height={500}>
             <LineChart width={800} height={500} data={data.Thailand}>
                 <XAxis dataKey="date"/>
                 <YAxis/>
