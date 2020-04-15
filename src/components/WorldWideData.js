@@ -20,10 +20,12 @@ function WorldWide() {
         setIsLoading(false)
     }
     
-    // const dataCountry = data && data.statistics && data.statistics.map(item => {
+    // const dataCountry() {
+    //     data && data.statistics && data.statistics.map(item => {
     //         const name = item.statistics.name
-    //         return name;
+    //         return 
     //     })
+    // }
 
     useEffect(() => {
         GlobalData();
@@ -49,7 +51,7 @@ function WorldWide() {
                     </Box>
                 }
                 </Row>
-                 {/* <Chart
+                 <Chart
                     width={'500px'}
                     height={'300px'}
                     chartType="GeoChart"
@@ -60,7 +62,7 @@ function WorldWide() {
                     
                     mapsApiKey="AIzaSyBCFqEMwJ1lIVoNWA77z15a8jWOc86KQEY"
                     rootProps={{ 'data-testid': '1' }}
-                 /> */}
+                 />
                 <DataChart data={data.Countries}/>
 
                 <BarChart data={data.Countries} />

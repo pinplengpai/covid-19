@@ -31,6 +31,7 @@ function CaseStat() {
   let femaleCount = 0
   let nullCount = 0
 
+<<<<<<< HEAD
   data && data.records && data.records.map(item => {
     if (item.gender === "ชาย") {
       maleCount++
@@ -93,6 +94,36 @@ function CaseStat() {
   return (
     <>
       {isLoading && <div> Loading ... </div>}
+=======
+    data && data.records && data.records.map(item =>{
+      if(item.gender === "ชาย") {
+        maleCount++
+      } else if (item.gender === "หญิง") {
+        femaleCount++
+      } else if (item.gender === null) {
+        nullCount ++ 
+      }
+    })
+    const genderCount = [{"male": maleCount, "female": femaleCount, "nonbinary": nullCount }];
+    
+    
+    // secondGroup, thirdGroup, forthGroup, fifthGroup, sixthGroup, 
+    // sevenGroup, eighthGroup, ninthGroup, tenGroup = 0
+    
+    
+    let firstGroup, secondGroup, thirdGroup = 0 
+      
+    const AgeIndex =  data && data.records && data.records.map(item =>{
+      return (item.age) 
+    })
+    
+    console.log(AgeIndex)
+
+    
+  return (
+    <>
+     {isLoading && <div> Loading ... </div>}
+>>>>>>> last commit 15/04
       {!isLoading && genderCount &&
         <BarChart width={730} height={250} data={genderCount}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -105,7 +136,32 @@ function CaseStat() {
           <Bar dataKey="nonbinary" fill="#82ca9d" />
         </BarChart>
       }
+<<<<<<< HEAD
     </>
+=======
+     {/* <BarChart
+        width={500}
+        height={300}
+        data={data.records}
+        margin={{
+          top: 5, right: 30, left: 20, bottom: 5,
+        }}
+        barSize={20}
+      >
+        <XAxis dataKey="age" scale="point" padding={{ left: 10, right: 10 }} />
+        <YAxis/> 
+        <Tooltip />
+        <Legend />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Bar dataKey="" fill="#8884d8" background={{ fill: '#eee' }} />
+        <Bar dataKey="11-20" fill="#8884d8" background={{ fill: '#eee' }} />
+        <Bar dataKey="21-30" fill="#8884d8" background={{ fill: '#eee' }} />
+        <Bar dataKey="31-40" fill="#8884d8" background={{ fill: '#eee' }} />
+        <Bar dataKey="41-50" fill="#8884d8" background={{ fill: '#eee' }} />
+        <Bar dataKey="51-60" fill="#8884d8" background={{ fill: '#eee' }} /> */}
+      {/* </BarChart>  */} */}
+     </>
+>>>>>>> last commit 15/04
   )
 }
 export default CaseStat
