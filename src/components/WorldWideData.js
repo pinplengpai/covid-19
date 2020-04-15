@@ -5,6 +5,8 @@ import { Row, Col} from 'antd';
 import { ReportCard, ContentContainer,Box, MiniBox} from '.././styles/index';
 import DataChart from './DataChart';
 import BarChart from './BarChart';
+import Chart from "react-google-charts";
+
 
 function WorldWide() {
     const [data, setData] = useState([]);
@@ -17,6 +19,11 @@ function WorldWide() {
         setData(response.data)
         setIsLoading(false)
     }
+    
+    // const dataCountry = data && data.statistics && data.statistics.map(item => {
+    //         const name = item.statistics.name
+    //         return name;
+    //     })
 
     useEffect(() => {
         GlobalData();
@@ -30,28 +37,30 @@ function WorldWide() {
                 {isLoading && <div> Loading ... </div> }
                 {!isLoading && data !== undefined && 
                     <Box>
-                        <Col span={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={['#9DB4CC']} >
+                        <Col span={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={'#9DB4CC'} >
                             <p>{data.totalDeaths}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={['#C6AFA3']} >
+                        <Col span={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={'#C6AFA3'} >
                             <p>{data.totalConfirmed}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#d3adba']} >
+                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={'#d3adba'} >
                             <p>{data.totalRecovered}</p></ReportCard>
                         </Col>
-                        {/* <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
-                            <p>{data.Global.TotalDeaths}</p></ReportCard>
-                        </Col>
-                        <Col span={8}><ReportCard title="New Recovered" bordered={false} bgcolor={['#cce0d6']}>
-                            <p>{data.Global.NewRecovered}</p></ReportCard>
-                        </Col>
-                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#A2C4B4']}>
-                            <p>{data.Global.TotalRecovered}</p></ReportCard>
-                        </Col> */}
                     </Box>
                 }
                 </Row>
-               
+                 {/* <Chart
+                    width={'500px'}
+                    height={'300px'}
+                    chartType="GeoChart"
+                    data={[
+                        ['Country', 'Total Confirmed', 'Total Recovered', 'Total Deaths'],
+                        [data.statistics.name, data.statistics.confirmed, data.statistics.recovered, data.statistics.deaths],
+                    ]}
+                    
+                    mapsApiKey="AIzaSyBCFqEMwJ1lIVoNWA77z15a8jWOc86KQEY"
+                    rootProps={{ 'data-testid': '1' }}
+                 /> */}
                 <DataChart data={data.Countries}/>
 
                 <BarChart data={data.Countries} />
