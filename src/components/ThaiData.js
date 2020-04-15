@@ -63,7 +63,7 @@ function ThaiData(){
           </Row>
           <ThaiTimeSeries />
           <CaseStat />
-          <PieChart />
+          <PieChart /> 
         </ContentContainer>
     </>
   )

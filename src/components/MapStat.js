@@ -7,7 +7,7 @@ function MapStat() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  async function CaseStatFetching() {
+  async function MapStatFetching() {
     const axios = require('axios')
     setIsLoading(true)
     const url = 'https://covid19-cdn.workpointnews.com/api/v2/cases.json'
