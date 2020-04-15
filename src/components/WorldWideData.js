@@ -58,7 +58,7 @@ function WorldWide() {
                     data={[
                         ['Country', 'Total Confirmed', 'Total Recovered', 'Total Deaths'],
                         [data.statistics.name, data.statistics.confirmed, data.statistics.recovered, data.statistics.deaths],
-                    ]}
+                    ]} 
                     
                     mapsApiKey="AIzaSyBCFqEMwJ1lIVoNWA77z15a8jWOc86KQEY"
                     rootProps={{ 'data-testid': '1' }}
