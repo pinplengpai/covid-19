@@ -30,13 +30,13 @@ function WorldWide() {
                 {isLoading && <div> Loading ... </div> }
                 {!isLoading && data !== undefined && 
                     <Box>
-                        <Col span={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={['#9DB4CC']} >
+                        <Col span={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={'#9DB4CC'} >
                             <p>{data.totalDeaths}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={['#C6AFA3']} >
+                        <Col span={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={'#C6AFA3'} >
                             <p>{data.totalConfirmed}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={['#d3adba']} >
+                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={'#d3adba'} >
                             <p>{data.totalRecovered}</p></ReportCard>
                         </Col>
                         {/* <Col span={8}><ReportCard title="Total Deaths" bordered={false} bgcolor={['#B78798']}>
