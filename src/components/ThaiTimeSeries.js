@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from "react";
 import axios from 'axios';
+import { Text } from '.././styles/index';
+
 import {
     LineChart,
     Line,
@@ -24,9 +26,8 @@ function ThaiTimeSeries(){
   }, []);
     
   return (
-//   <p>{JSON.stringify(data.Thailand)}</p>
     <div>
-        <h2>Trend of cases in Thailand</h2>
+        <Text><h2>Trend of cases in Thailand</h2></Text>
         <ResponsiveContainer width="90%" height={500}>
             <LineChart width={800} height={500} data={data.Thailand}>
                 <XAxis dataKey="date"/>

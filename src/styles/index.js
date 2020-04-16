@@ -7,7 +7,11 @@ export const Body = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    width: 100vw;
+    width: 100vw;    
+`
+export const Text = styled.div`
+    font-weight: bold;
+    font-size: 20px;
 `
 
 export const ContentContainer = styled(Layout.Content)`
@@ -16,20 +20,25 @@ export const ContentContainer = styled(Layout.Content)`
 
 export const ReportCard = styled(Card)`
     background-color: ${props=> props.bgcolor};
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 10px;
         .site-card-border-less-wrapper {
             background: black;
-            padding: 30px;
+            //padding: 30px;
         }
         .ant-card-head-title{
+            font-family: 'Inconsolata', monospace;
             font-size: 1.5rem;
             font-weight: bold;
             text-align: center;
         }
-        .ant-card-body p {
-            text-align: center;
-        }
+        .ant-card-body 
+            padding: 10px !important;
+            p {
+                text-align: center;
+                font-size: 3rem;
+                margin: 0;
+            }
 `
 
 export const Box = styled.div`

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import {Row, Col} from 'antd';
 import {
   BarChart,
   Bar,
@@ -63,53 +64,47 @@ function CaseStat() {
                     {"name":"71-80", "age": age8 && age8.length},
                     {"name":"80-120", "age": age9 && age9.length}];
                           
-  console.log(ageGroup);
   
-  
-
-
-  // const AgeIndex =  data && data.records && data.records.map(item =>{
-  //   const age1st = [];
-  //   // if (item.age() >0 && item.age< 10) {
-  //   //   age1st.(item.age);
-  //   // } 
-  //   // console.log(age1st)
-  //   // return item.age
-  // })
-  // console.log(AgeIndex)
   return (
     <>
-     {isLoading && <div> Loading ... </div>}
-      {!isLoading && genderCount &&
-        <BarChart width={730} height={250} data={genderCount}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="gender" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="male" fill="#8884d8" />
-          <Bar dataKey="female" fill="#82ca9d" />
-          <Bar dataKey="nonbinary" fill="#82ca9d" />
-        </BarChart>
-      }
-
-     <BarChart
-        width={800}
-        height={300}
-        data={ageGroup}
-        margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
-        }}
-        barSize={20}
-      >
-        <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-        <YAxis/> 
-        <Tooltip />
-        <Legend />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="age" fill="#8884d8" background={{ fill: '#eee' }} />
-  
-      </BarChart> 
+    <Row gutter={[16, 16]} style={{ marginTop: '3%' }} >
+        <Col xl={12} sm={24}>
+            {isLoading && <div> Loading ... </div>}
+            {!isLoading && ageGroup &&
+              <BarChart
+                  width={600}
+                  height={300}
+                  data={ageGroup}
+                  margin={{
+                    top: 10, right: 30, left: 20, bottom: 5,
+                  }}
+                  barSize={20}
+                >
+                  <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+                  <YAxis/> 
+                  <Tooltip />
+                  <Legend />
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <Bar dataKey="age" fill="#EF6830" background={{ fill: '#F6B259' }} />
+              </BarChart> 
+            }
+        </Col>
+        <Col xl={12} sm={24}>
+          {isLoading && <div> Loading ... </div>}
+            {!isLoading && genderCount &&
+              <BarChart width={500} height={350} data={genderCount}>
+                <CartesianGrid strokeDasharray="2 2" />
+                <XAxis dataKey="gender" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="male" fill="#EF6330" />
+                <Bar dataKey="female" fill="#F18A6A" />
+                <Bar dataKey="nonbinary" fill="#F1AB88" />
+              </BarChart>
+            }
+        </Col>
+      </Row>
      </>
   )
 }

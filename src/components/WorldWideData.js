@@ -21,7 +21,7 @@ function WorldWide() {
     }
     
     function FormatDataMap(item){
-        if( !item ) { return;}
+        if( !item ) {return;}
         return ([
                 item.name, 
                 item.confirmed, 
@@ -29,6 +29,7 @@ function WorldWide() {
             ]
          )
     }
+    
     const dataCountry = data && data.statistics && data.statistics.map(item => FormatDataMap(item))
     const headline = [['country', 'confirmed', 'deaths']]
     const dataMap = headline.concat(dataCountry)
@@ -62,13 +63,11 @@ function WorldWide() {
                     height={'300px'}
                     chartType="GeoChart"
                     data={dataMap}
-                    
-                    mapsApiKey="AIzaSyBCFqEMwJ1lIVoNWA77z15a8jWOc86KQEY"
+                    mapsApiKey="AIzaSyArgjkn7FWZuE_5ROT4iyEu5ZNZJU8M2wQ"
                     rootProps={{ 'data-testid': '1' }}
                  />
-                <DataChart data={data.Countries}/>
-
-                <BarChart data={data.Countries} />
+                <DataChart data={data && data.statistics && data.statistics.name}/>
+                <BarChart data={data && data.statistics && data.statistics.name} />
 
                 <Row>
                         <Col xl={6} sm={12}>  

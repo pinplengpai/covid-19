@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 
 const HeaderContainer = styled(Layout.Header)`
-    background-color: #e5e5e5;
+    background-color: #F6B259;
     justify-content: space-between;
     display: flex;
     justify-content: center;
@@ -18,6 +18,8 @@ const HeaderContainer = styled(Layout.Header)`
     a{
         text-decoration: none;
         color: black;
+        font-family: 'Inconsolata', monospace;
+        font-size: 16px;
     }
 
 `
