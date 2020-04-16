@@ -42,9 +42,7 @@ export const ReportCard = styled(Card)`
 `
 
 export const Box = styled.div`
-  display: flex;
-  justify-content: space-around;
-
+    margin: 0 auto;
 `
 
 export const MiniBox = styled(Card)`

@@ -4,7 +4,7 @@ import ThaiTimeSeries from './ThaiTimeSeries';
 import CaseStat from './CaseStat';
 import axios from 'axios';
 import { Row, Col} from 'antd'
-import { ReportCard, ContentContainer} from '.././styles/index';
+import { ReportCard, ContentContainer,Text} from '.././styles/index';
 
 
 function ThaiData(){
@@ -27,7 +27,8 @@ function ThaiData(){
     <>
       <Header />
         <ContentContainer>
-          <Row gutter={[16, 16]}  style={{ marginTop: '3%' }}>
+          <Text style={{ marginTop: '3%' }}><h2>Coronavirus Updated in Thailand</h2></Text>
+          <Row gutter={[16, 16]}  style={{ marginTop: '1%' }}>
               {isLoading && <div> Loading ... </div> }
               {!isLoading && data !== undefined && 
               <>

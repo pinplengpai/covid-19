@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
 import { Row, Col} from 'antd';
-import { ReportCard, ContentContainer,Box, MiniBox} from '.././styles/index';
+import { ReportCard, ContentContainer,Box, Text } from '.././styles/index';
 import DataChart from './DataChart';
 import BarChart from './BarChart';
 import Chart from "react-google-charts";
@@ -42,17 +42,18 @@ function WorldWide() {
         <>
         <Header />
             <ContentContainer>
-                <Row style={{ marginTop: '3%' }}>
+                <Text style={{ marginTop: '3%' }}><h2>Coronavirus Updated Worldwide</h2></Text>
+                <Row style={{ marginTop: '1%' }}>
                 {isLoading && <div> Loading ... </div> }
                 {!isLoading && data !== undefined && 
                     <Box>
-                        <Col span={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={'#9DB4CC'} >
+                        <Col xl={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={'#9DB4CC'} >
                             <p>{data.totalDeaths}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={'#C6AFA3'} >
+                        <Col xl={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={'#C6AFA3'} >
                             <p>{data.totalConfirmed}</p></ReportCard>
                         </Col>
-                        <Col span={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={'#d3adba'} >
+                        <Col xl={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={'#d3adba'} >
                             <p>{data.totalRecovered}</p></ReportCard>
                         </Col>
                     </Box>
@@ -68,24 +69,6 @@ function WorldWide() {
                  />
                 <DataChart data={data && data.statistics && data.statistics.name}/>
                 <BarChart data={data && data.statistics && data.statistics.name} />
-
-                <Row>
-                        <Col xl={6} sm={12}>  
-                            <MiniBox />
-                        </Col>
-                        <Col xl={6} sm={12}>
-                        
-                            <MiniBox style={{ backgroundColor: 'red' }}/>
-                        </Col>
-                        <Col xl={6} sm={12}>
-                        
-                            <MiniBox style={{ backgroundColor: 'yellow' }}/>
-                        </Col>
-                        <Col xl={6} sm={12}>
-                            <MiniBox style={{ backgroundColor: 'green' }}/>
-                        </Col>
-                </Row>    
-
             </ContentContainer>    
                    
         </>
