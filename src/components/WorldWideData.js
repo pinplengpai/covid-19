@@ -29,19 +29,9 @@ function WorldWide() {
             ]
          )
     }
-    const dataCountry =[];
-         dataCountry = data && data.statistics && data.statistics.map(item => FormatDataMap(item))
-    const headline = ['country', 'confirmed', 'deaths']
-        dataCountry.push(headline)
-        
-          
-    console.log("dataCountry", dataCountry);
-    
-
-    // [
-    //     ['Country', 'Confirmed', 'Deaths'],
-    //     ['Germany', 200, 400]    
-    //   ]
+    const dataCountry = data && data.statistics && data.statistics.map(item => FormatDataMap(item))
+    const headline = [['country', 'confirmed', 'deaths']]
+    const dataMap = headline.concat(dataCountry)
 
     useEffect(() => {
         GlobalData();
@@ -67,15 +57,15 @@ function WorldWide() {
                     </Box>
                 }
                 </Row>
-                 {/* <Chart
+                 <Chart
                     width={'800px'}
                     height={'300px'}
                     chartType="GeoChart"
-                    data={}
+                    data={dataMap}
                     
                     mapsApiKey="AIzaSyBCFqEMwJ1lIVoNWA77z15a8jWOc86KQEY"
                     rootProps={{ 'data-testid': '1' }}
-                 /> */}
+                 />
                 <DataChart data={data.Countries}/>
 
                 <BarChart data={data.Countries} />
