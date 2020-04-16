@@ -38,7 +38,7 @@ function ThaiData(){
                     </ReportCard>
                   </Col>
                   <Col xl={6} sm={12}>
-                    <ReportCard title="Total Cases" bordered={false} bgcolor={'#F18A6A'}>
+                    <ReportCard title="Total Confirmed" bordered={false} bgcolor={'#F18A6A'}>
                       <p>{data["ผู้ติดเชื้อ"]}</p>
                     </ReportCard>
                   </Col>

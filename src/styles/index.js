@@ -21,11 +21,8 @@ export const ContentContainer = styled(Layout.Content)`
 export const ReportCard = styled(Card)`
     background-color: ${props=> props.bgcolor};
     border-radius: 8px;
+    box-shadow: 10px 10px 5px rgb(0,0,0,0.2);
     padding: 10px;
-        .site-card-border-less-wrapper {
-            background: black;
-            //padding: 30px;
-        }
         .ant-card-head-title{
             font-family: 'Inconsolata', monospace;
             font-size: 1.5rem;
@@ -42,7 +39,7 @@ export const ReportCard = styled(Card)`
 `
 
 export const Box = styled.div`
-    margin: 0 auto;
+    box-shadow: 20px 20px 10px rgb(0,0,0,0.2);
 `
 
 export const MiniBox = styled(Card)`

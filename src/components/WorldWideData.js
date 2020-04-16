@@ -43,32 +43,48 @@ function WorldWide() {
         <Header />
             <ContentContainer>
                 <Text style={{ marginTop: '3%' }}><h2>Coronavirus Updated Worldwide</h2></Text>
-                <Row style={{ marginTop: '1%' }}>
-                {isLoading && <div> Loading ... </div> }
-                {!isLoading && data !== undefined && 
-                    <Box>
-                        <Col xl={8}><ReportCard title="Total Deaths" bordered={false}  bgcolor={'#9DB4CC'} >
-                            <p>{data.totalDeaths}</p></ReportCard>
+                <Row  gutter={[16, 16]} style={{ marginTop: '1%' }}>
+                    {isLoading && <div> Loading ... </div> }
+                    {!isLoading && data !== undefined &&
+                    <>
+                        <Col xl={8}>
+                            <ReportCard title="Total confirmed" bordered={false} bgcolor={'#F18A6A'} >
+                                <p>{data.totalConfirmed}</p>
+                            </ReportCard> 
                         </Col>
-                        <Col xl={8}><ReportCard title="Total confirmed" bordered={false} bgcolor={'#C6AFA3'} >
-                            <p>{data.totalConfirmed}</p></ReportCard>
+                        <Col xl={8}>
+                            <ReportCard title="Total Recovered" bordered={false} bgcolor={'#EF7049'} >
+                                <p>{data.totalRecovered}</p>
+                            </ReportCard>
                         </Col>
-                        <Col xl={8}><ReportCard title="Total Recovered" bordered={false} bgcolor={'#d3adba'} >
-                            <p>{data.totalRecovered}</p></ReportCard>
+                        <Col xl={8}>
+                            <ReportCard title="Total Deaths" bordered={false}  bgcolor={'#E0582C'} >
+                                <p>{data.totalDeaths}</p>
+                            </ReportCard>
                         </Col>
-                    </Box>
-                }
+                    </>
+                    }
                 </Row>
-                 <Chart
-                    width={'800px'}
-                    height={'300px'}
-                    chartType="GeoChart"
-                    data={dataMap}
-                    mapsApiKey="AIzaSyArgjkn7FWZuE_5ROT4iyEu5ZNZJU8M2wQ"
-                    rootProps={{ 'data-testid': '1' }}
-                 />
-                <DataChart data={data && data.statistics && data.statistics.name}/>
-                <BarChart data={data && data.statistics && data.statistics.name} />
+                <Row style={{ marginTop: '3%' }}>
+                    <Text><h2>Tracking the Global Outbreak</h2></Text>
+                    <Col xl={24} style={{ display: 'flex', justifyContent:'center' }} >
+                        <Box>
+                        <Chart
+                            width={'1300px'}
+                            height={'700px'}
+                            chartType="GeoChart"
+                            data={dataMap}
+                            mapsApiKey="AIzaSyArgjkn7FWZuE_5ROT4iyEu5ZNZJU8M2wQ"
+                            rootProps={{ 'data-testid': '1' }}
+                            options={{
+                                colorAxis: { colors: ['#FBDFB3','#DC812B','#e0582c'] },
+                            }}
+                        />
+                        </Box>
+                    </Col>
+                 </Row>
+                {/* <DataChart data={data && data.statistics && data.statistics.name}/>
+                <BarChart data={data && data.statistics && data.statistics.name} /> */}
             </ContentContainer>    
                    
         </>
