@@ -22,7 +22,7 @@ function WorldWide() {
     function FormatDataMap(item){
         if( !item ) {return;}
         return ([
-                item.name, 
+                item.name,  
                 item.confirmed, 
                 item.deaths
             ]
