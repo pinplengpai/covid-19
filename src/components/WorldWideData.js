@@ -71,7 +71,7 @@ function WorldWide() {
                             height={'700px'}
                             chartType="GeoChart"
                             data={dataMap}
-                            mapsApiKey="AIzaSyArgjkn7FWZuE_5ROT4iyEu5ZNZJU8M2wQ"
+                            mapsApiKey="AIzaSyDV6kiNfxxVMwke9PjKQ6YkrZKWMky2-kA"
                             rootProps={{ 'data-testid': '1' }}
                             options={{
                                 colorAxis: { colors: ['#F17E30','#CB4027','#BC3623'] },
