@@ -28,8 +28,8 @@ function Header() {
     return (
         <HeaderContainer>
             <ul>
-                <li> <span>🇹🇭</span> <Link to="/">Thailand</Link></li> | 
-                <li> <span >🌍</span> <Link to="/worldwide"> Worldwide</Link></li>
+                <li> <span role="img" aria-label="Icon">🇹🇭</span> <Link to="/">Thailand</Link></li> | 
+                <li> <span role="img" aria-label="Icon"  >🌍</span> <Link to="/worldwide"> Worldwide</Link></li>
             </ul>
         </HeaderContainer>
     )

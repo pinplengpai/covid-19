@@ -39,7 +39,7 @@ function BarChartStat() {
         femaleCount++
       } else if (item.gender === null) {
         nullCount++
-      }
+      } 
     })
 
     const genderCount = [{ "male": maleCount, "female": femaleCount, "nonbinary": nullCount }];
