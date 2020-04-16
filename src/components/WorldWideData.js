@@ -3,8 +3,7 @@ import Header from './Header';
 import axios from 'axios';
 import { Row, Col} from 'antd';
 import { ReportCard, ContentContainer,Box, Text } from '.././styles/index';
-import DataChart from './DataChart';
-import BarChart from './BarChart';
+import Loading from './Loading';
 import Chart from "react-google-charts";
 
 
@@ -42,28 +41,26 @@ function WorldWide() {
         <>
         <Header />
             <ContentContainer>
+            {isLoading && <div><Loading/></div> }
+            {!isLoading && data !== undefined && 
+             <>
                 <Text style={{ marginTop: '3%' }}><h2>Coronavirus Updated Worldwide</h2></Text>
                 <Row  gutter={[16, 16]} style={{ marginTop: '1%' }}>
-                    {isLoading && <div> Loading ... </div> }
-                    {!isLoading && data !== undefined &&
-                    <>
-                        <Col xl={8}>
-                            <ReportCard title="Total confirmed" bordered={false} bgcolor={'#F18A6A'} >
-                                <p>{data.totalConfirmed}</p>
-                            </ReportCard> 
-                        </Col>
-                        <Col xl={8}>
-                            <ReportCard title="Total Recovered" bordered={false} bgcolor={'#EF7049'} >
-                                <p>{data.totalRecovered}</p>
-                            </ReportCard>
-                        </Col>
-                        <Col xl={8}>
-                            <ReportCard title="Total Deaths" bordered={false}  bgcolor={'#E0582C'} >
-                                <p>{data.totalDeaths}</p>
-                            </ReportCard>
-                        </Col>
-                    </>
-                    }
+                    <Col xl={8}>
+                        <ReportCard title="Total confirmed" bordered={false} bgcolor={'#F18A6A'} >
+                            <p>{data.totalConfirmed}</p>
+                        </ReportCard> 
+                    </Col>
+                    <Col xl={8}>
+                        <ReportCard title="Total Recovered" bordered={false} bgcolor={'#EF7049'} >
+                            <p>{data.totalRecovered}</p>
+                        </ReportCard>
+                    </Col>
+                    <Col xl={8}>
+                        <ReportCard title="Total Deaths" bordered={false}  bgcolor={'#E0582C'} >
+                            <p>{data.totalDeaths}</p>
+                        </ReportCard>
+                    </Col>
                 </Row>
                 <Row style={{ marginTop: '3%' }}>
                     <Text><h2>Tracking the Global Outbreak</h2></Text>
@@ -77,17 +74,17 @@ function WorldWide() {
                             mapsApiKey="AIzaSyArgjkn7FWZuE_5ROT4iyEu5ZNZJU8M2wQ"
                             rootProps={{ 'data-testid': '1' }}
                             options={{
-                                colorAxis: { colors: ['#FBDFB3','#DC812B','#e0582c'] },
+                                colorAxis: { colors: ['#F17E30','#CB4027','#BC3623'] },
+                                backgroundColor: "#F8C392"
                             }}
                         />
                         </Box>
                     </Col>
                  </Row>
-                {/* <DataChart data={data && data.statistics && data.statistics.name}/>
-                <BarChart data={data && data.statistics && data.statistics.name} /> */}
-            </ContentContainer>    
-                   
-        </>
+                </>
+            }
+         </ContentContainer>   
+         </> 
     )
 }
 

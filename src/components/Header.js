@@ -8,7 +8,8 @@ const HeaderContainer = styled(Layout.Header)`
     justify-content: space-between;
     display: flex;
     justify-content: center;
-    box-shadow: 2px 0 rgb(183, 183, 183) ;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.1);
+
     li{
         list-style: none;
         display: inline;
