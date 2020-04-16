@@ -31,7 +31,6 @@ function CaseStat() {
   let femaleCount = 0
   let nullCount = 0
 
-<<<<<<< HEAD
   data && data.records && data.records.map(item => {
     if (item.gender === "ชาย") {
       maleCount++
@@ -41,89 +40,46 @@ function CaseStat() {
       nullCount++
     }
   })
+
   const genderCount = [{ "male": maleCount, "female": femaleCount, "nonbinary": nullCount }];
-  console.log(genderCount)
-  // console.log(genderCount)
-  // let number = ata && data.records && data.records.map(item =>{
-  //   if (item.gender === "ชาย") {
-  //       item.gender1 = item.gender || "ชาย";
-  //     } else if (item.gender === "หญิง"){
-  //       item.gender2 = item.gender || "หญิง";
-  //     } else if (item.gender === "null"){
-  //       item.gender3 = item.gender || "null";
-  //     }
-  //   return item;
-  //   })
+     
+  const age1 =  data && data.records && data.records.filter(item => item.age >= 0 && item.age <= 10)
+  const age2 = data && data.records && data.records.filter(item => item.age >= 11 && item.age <= 20)
+  const age3 = data && data.records && data.records.filter(item => item.age >= 21 && item.age <= 30)
+  const age4 = data && data.records && data.records.filter(item => item.age >= 31 && item.age <= 40)
+  const age5 = data && data.records && data.records.filter(item => item.age >= 41 && item.age <= 50)
+  const age6 = data && data.records && data.records.filter(item => item.age >= 51 && item.age <= 60)
+  const age7 = data && data.records && data.records.filter(item => item.age >= 61 && item.age <= 70)
+  const age8 = data && data.records && data.records.filter(item => item.age >= 71 && item.age <= 80)
+  const age9 = data && data.records && data.records.filter(item => item.age >= 81 && item.age <= 120)
+  const ageGroup = [
+                    {"name":"0-10", "age": age1 && age1.length}, 
+                    {"name":"11-20", "age": age2 && age2.length},
+                    {"name":"21-30", "age": age3 && age3.length},
+                    {"name":"31-40", "age": age4 && age4.length},
+                    {"name":"41-50", "age": age5 && age5.length},
+                    {"name":"51-60", "age": age6 && age6.length},
+                    {"name":"61-70", "age": age7 && age7.length},
+                    {"name":"71-80", "age": age8 && age8.length},
+                    {"name":"80-120", "age": age9 && age9.length}];
+                          
+  console.log(ageGroup);
+  
+  
 
-  // let female = data && data.records && data.records.map(item =>{
-  //   if (item.gender === "หญิง") {
-  //       item.gender2 = item.gender || "หญิง";
-  //     } 
-  //   return item.gender2;
-  //   })
 
-  // let unknown = data && data.records && data.records.map(item =>{
-  //   if (item.gender === "null") {
-  //   item.gender3 = item.gender || "null";
-  //   } 
-  //   return item.gender3;
+  // const AgeIndex =  data && data.records && data.records.map(item =>{
+  //   const age1st = [];
+  //   // if (item.age() >0 && item.age< 10) {
+  //   //   age1st.(item.age);
+  //   // } 
+  //   // console.log(age1st)
+  //   // return item.age
   // })
-
-  // console.log(unknown)
-
-
-  // const unknown = data && data.records && data.records.map(item =>{
-  //   if (item.gender === "null") {
-  //       item.gender3 = item.gender || "null";
-  //     } 
-  //   return item.gender3;
-  //   })
-
-
-  /* data && data.records && data.records.map(item =>{
-      if (item.gender === "ชาย") {
-          item.gender1 = item.gender || "ชาย";
-        } else if (item.gender === "หญิง") {
-          item.gender2 = item.gender || "หญิง";
-        }
-      return item.gender;
-      })
-  */
-
-
-  return (
-    <>
-      {isLoading && <div> Loading ... </div>}
-=======
-    data && data.records && data.records.map(item =>{
-      if(item.gender === "ชาย") {
-        maleCount++
-      } else if (item.gender === "หญิง") {
-        femaleCount++
-      } else if (item.gender === null) {
-        nullCount ++ 
-      }
-    })
-    const genderCount = [{"male": maleCount, "female": femaleCount, "nonbinary": nullCount }];
-    
-    
-    // secondGroup, thirdGroup, forthGroup, fifthGroup, sixthGroup, 
-    // sevenGroup, eighthGroup, ninthGroup, tenGroup = 0
-    
-    
-    let firstGroup, secondGroup, thirdGroup = 0 
-      
-    const AgeIndex =  data && data.records && data.records.map(item =>{
-      return (item.age) 
-    })
-    
-    console.log(AgeIndex)
-
-    
+  // console.log(AgeIndex)
   return (
     <>
      {isLoading && <div> Loading ... </div>}
->>>>>>> last commit 15/04
       {!isLoading && genderCount &&
         <BarChart width={730} height={250} data={genderCount}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -136,32 +92,25 @@ function CaseStat() {
           <Bar dataKey="nonbinary" fill="#82ca9d" />
         </BarChart>
       }
-<<<<<<< HEAD
-    </>
-=======
-     {/* <BarChart
-        width={500}
+
+     <BarChart
+        width={800}
         height={300}
-        data={data.records}
+        data={ageGroup}
         margin={{
           top: 5, right: 30, left: 20, bottom: 5,
         }}
         barSize={20}
       >
-        <XAxis dataKey="age" scale="point" padding={{ left: 10, right: 10 }} />
+        <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
         <YAxis/> 
         <Tooltip />
         <Legend />
         <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="" fill="#8884d8" background={{ fill: '#eee' }} />
-        <Bar dataKey="11-20" fill="#8884d8" background={{ fill: '#eee' }} />
-        <Bar dataKey="21-30" fill="#8884d8" background={{ fill: '#eee' }} />
-        <Bar dataKey="31-40" fill="#8884d8" background={{ fill: '#eee' }} />
-        <Bar dataKey="41-50" fill="#8884d8" background={{ fill: '#eee' }} />
-        <Bar dataKey="51-60" fill="#8884d8" background={{ fill: '#eee' }} /> */}
-      {/* </BarChart>  */} */}
+        <Bar dataKey="age" fill="#8884d8" background={{ fill: '#eee' }} />
+  
+      </BarChart> 
      </>
->>>>>>> last commit 15/04
   )
 }
 export default CaseStat

@@ -20,12 +20,28 @@ function WorldWide() {
         setIsLoading(false)
     }
     
-    // const dataCountry() {
-    //     data && data.statistics && data.statistics.map(item => {
-    //         const name = item.statistics.name
-    //         return 
-    //     })
-    // }
+    function FormatDataMap(item){
+        if( !item ) { return;}
+        return ([
+                item.name, 
+                item.confirmed, 
+                item.deaths
+            ]
+         )
+    }
+    const dataCountry =[];
+         dataCountry = data && data.statistics && data.statistics.map(item => FormatDataMap(item))
+    const headline = ['country', 'confirmed', 'deaths']
+        dataCountry.push(headline)
+        
+          
+    console.log("dataCountry", dataCountry);
+    
+
+    // [
+    //     ['Country', 'Confirmed', 'Deaths'],
+    //     ['Germany', 200, 400]    
+    //   ]
 
     useEffect(() => {
         GlobalData();
@@ -51,18 +67,15 @@ function WorldWide() {
                     </Box>
                 }
                 </Row>
-                 <Chart
-                    width={'500px'}
+                 {/* <Chart
+                    width={'800px'}
                     height={'300px'}
                     chartType="GeoChart"
-                    data={[
-                        ['Country', 'Total Confirmed', 'Total Recovered', 'Total Deaths'],
-                        [data.statistics.name, data.statistics.confirmed, data.statistics.recovered, data.statistics.deaths],
-                    ]} 
+                    data={}
                     
                     mapsApiKey="AIzaSyBCFqEMwJ1lIVoNWA77z15a8jWOc86KQEY"
                     rootProps={{ 'data-testid': '1' }}
-                 />
+                 /> */}
                 <DataChart data={data.Countries}/>
 
                 <BarChart data={data.Countries} />
