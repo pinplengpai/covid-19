@@ -32,15 +32,15 @@ function BarChartStat() {
   let femaleCount = 0
   let nullCount = 0
 
-  data && data.records && data.records.map(item => {
-    if (item.gender === "ชาย") {
-      maleCount++
-    } else if (item.gender === "หญิง") {
-      femaleCount++
-    } else if (item.gender === null) {
-      nullCount++
-    }
-  })
+    data && data.records && data.records.map(item => {
+      if (item.gender === "ชาย") {
+        maleCount++
+      } else if (item.gender === "หญิง") {
+        femaleCount++
+      } else if (item.gender === null) {
+        nullCount++
+      } 
+    })   
 
   const genderCount = [{ "male": maleCount, "female": femaleCount, "nonbinary": nullCount }];
   // Age Chart

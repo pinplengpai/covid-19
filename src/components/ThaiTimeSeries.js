@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import axios from 'axios';
-import { Text, Box } from '.././styles/index';
+import { Text } from '.././styles/index';
 
 import {
     LineChart,
