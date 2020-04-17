@@ -4,12 +4,11 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 
 const HeaderContainer = styled(Layout.Header)`
-    background-color: #D6E0E4;
+    background-color: #989898;
     justify-content: space-between;
     display: flex;
     justify-content: center;
-    box-shadow:inset 0 15px 5px -16px #111;
-
+    box-shadow:10px 10px 10px rgb(0,0,0,0.2);
 
     li{
         list-style: none;
@@ -19,7 +18,7 @@ const HeaderContainer = styled(Layout.Header)`
     }
     a{
         text-decoration: none;
-        color: black;
+        color: white;
         font-family: 'Inconsolata', monospace;
         font-size: 16px;
     }

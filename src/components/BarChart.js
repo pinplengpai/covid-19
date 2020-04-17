@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Text } from '../styles/index';
+import { Text,Section } from '../styles/index';
 import { Row, Col } from 'antd';
 import {
   BarChart,
@@ -67,7 +67,8 @@ function BarChartStat() {
 
   return (
     <>
-      <Row gutter={[16, 16]} style={{ marginTop: '3%' }} >
+    <Section bgcolor={'#d4d5d6'}>
+      <Row gutter={[16, 16]} style={{ marginTop: '3%', marginBottom: '8%'}} >
         <Col xl={12} sm={24}>
           <Text><h3 style={{ marginLeft: '8%', marginBottom: '7%' }}>Age</h3></Text>
           {isLoading && <div> Loading ... </div>}
@@ -106,8 +107,8 @@ function BarChartStat() {
             </BarChart>
           }
         </Col>
-
       </Row>
+      </Section>
     </>
   )
 }

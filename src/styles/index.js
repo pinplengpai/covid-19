@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Card, Layout } from 'antd';
 
 
+
 export const Body = styled.div`
     min-height: 100vh;
     top: 0;
@@ -23,6 +24,7 @@ export const ReportCard = styled(Card)`
     border-radius: 8px;
     box-shadow: 10px 10px 5px rgb(0,0,0,0.2);
     padding: 10px;
+    position: relative;
         .ant-card-head-title{
             font-family: 'Inconsolata', monospace;
             font-size: 1.5rem;
@@ -42,7 +44,23 @@ export const Box = styled.div`
     box-shadow: 20px 20px 10px rgb(0,0,0,0.2);
 `
 
-export const MiniBox = styled(Card)`
-  background-color: blue;
-  height: 100px;
+export const Section = styled.div`
+    background-color: ${props => props.bgcolor};
+    border-radius: 3px;
+`
+
+
+export const Element = styled.div`
+    background-image: url(${props=> props.url}) ;
+    position: absolute;
+    z-index:2;
+    background-size: cover;
+    width: 100px;
+    height: 100px; 
+    background-repeat: no-repeat; 
+    bottom: ${props=> props.bottom};
+    top: ${props=> props.top};
+    left: ${props=> props.left};
+    right: ${props=> props.right};
+   
 `

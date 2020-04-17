@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 
 const FooterContainer = styled(Layout.Footer)`
-    background-color: #7D8F85;
+    background-color: #989898;
     box-shadow:inset 0 15px 5px -16px #111;
 
     ul {
