@@ -46,7 +46,6 @@ export const ReportCard = styled(Card)`
 `
 
 export const Box = styled.div`
-    box-shadow: 20px 20px 10px rgb(0,0,0,0.2);
 `
 
 export const Section = styled.div`

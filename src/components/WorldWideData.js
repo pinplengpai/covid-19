@@ -6,12 +6,12 @@ import { Row, Col} from 'antd';
 import { ReportCard, ContentContainer,Box, Text,Element } from '.././styles/index';
 import Loading from './Loading';
 import Chart from "react-google-charts";
-import * as Underline2 from  './images/underline2.png'
-import * as Underline3 from  './images/underline3.png'
-import * as Confirmed1 from  './images/confirmed1.png'
-import * as Death1 from  './images/death1.png'
-import * as Recover1 from  './images/recover1.png'
-import * as Gradiant1 from  './images/gradiant1.png'
+import * as Bgheadline from  './images/bgheadline.png'
+import * as Bgheadline1 from  './images/bgheadline1.png'
+// import * as Rip from './images/rip.png'
+// import * as Recovered from './images/recoverd.png'
+// import * as Confirmed from './images/confirmed.png'
+// import * as Gradiant1 from  './images/gradiant1.png'
 
 function WorldWide() {
     const [data, setData] = useState([]);
@@ -51,22 +51,22 @@ function WorldWide() {
             {!isLoading && data !== undefined && 
              <>
                 <Text style={{ marginTop: '3%' }}><h2 style={{ fontWeight: 'bold' }}>Coronavirus Updated Worldwide</h2></Text>
-                <Element  style={{ transform: 'rotate(6deg)'}} url={Underline2} left={'1%'} top={'-14%'} width={'447px'} height={'276px'} zindex={'-1'}/> 
+                <Element url={Bgheadline} left={'-5%'} top={'-21%'} width={'579px'} height={'332px'} zindex={'-1'}/> 
                 <Row  gutter={[16, 16]} style={{ marginTop: '5%' }}>
                     <Col xl={8}>
-                        <Element url={Confirmed1} top={'35%'} right={'4%'} width={'115px'} height={'111px'} zindex={'2'}/> 
+                        {/* <Element url={Confirmed} top={'35%'} right={'4%'} width={'115px'} height={'111px'} zindex={'2'}/>  */}
                         <ReportCard title="Total confirmed" bordered={false} bgcolor={'#87A08B'} >
                             <p>{data.totalConfirmed}</p>
                         </ReportCard> 
                     </Col>
                     <Col xl={8}>
-                        <Element url={Recover1} top={'-25%'} left={'1%'} width={'152px'} height={'144px'} zindex={'2'}/> 
+                        {/* <Element url={Recovered} top={'-25%'} left={'1%'} width={'152px'} height={'144px'} zindex={'2'}/>  */}
                         <ReportCard title="Total Recovered" bordered={false} bgcolor={'#8AA15F'} >
                             <p>{data.totalRecovered}</p>
                         </ReportCard>
                     </Col>
                     <Col xl={8}>
-                        <Element url={Death1} bottom={'-21%'} left={'-9%'} width={'155px'} height={'149px'} zindex={'2'}/> 
+                        {/* <Element url={Rip} bottom={'-21%'} left={'-9%'} width={'155px'} height={'149px'} zindex={'2'}/>  */}
                         <ReportCard title="Total Deaths" bordered={false}  bgcolor={'#3A5335'} >
                             <p>{data.totalDeaths}</p>
                         </ReportCard>
@@ -74,10 +74,10 @@ function WorldWide() {
                 </Row>
                 <Row style={{ marginTop: '3%' }}>
                     <Text style={{ marginTop: '3%' }}><h2 style={{ fontWeight: 'bold' }}>Tracking the Global Outbreak</h2></Text>
-                    <Element style={{ transform: 'rotate(6deg)'}} url={Underline3} top={'20.5%'} width={'439px'} height={'289px'} zindex={'2'}/> 
+                    <Element url={Bgheadline1} left={'-5%'} top={'13%'} width={'578px'} height={'336px'} zindex={'-1'}/> 
                     <Col xl={24} style={{ display: 'flex', justifyContent:'center' }} >
                         <Box style={{ marginTop: '5%' }}>
-                        <Element url={Gradiant1} top={'-10%'} right={'-5%'} width={'358px'} height={'335px'} zindex={'2'}/> 
+                        {/* <Element url={Gradiant1} top={'-10%'} right={'-5%'} width={'358px'} height={'335px'} zindex={'2'}/>  */}
                         <Chart
                             width={'1300px'}
                             height={'700px'}
@@ -87,7 +87,7 @@ function WorldWide() {
                             rootProps={{ 'data-testid': '1' }}
                             options={{
                                 colorAxis: { colors: ['#9C9F81','#6D805E','#181B0E'] },
-                                backgroundColor: "#D2D6A8",
+                                backgroundColor: "transparent",
                                 borderRadius:"5px"
                             }}
                         />
