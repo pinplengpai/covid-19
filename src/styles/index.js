@@ -25,6 +25,10 @@ export const ReportCard = styled(Card)`
     box-shadow: 10px 10px 5px rgb(0,0,0,0.2);
     padding: 10px;
     position: relative;
+    :hover {
+        margin: 1%;
+
+    }
         .ant-card-head-title{
             font-family: 'Inconsolata', monospace;
             font-size: 1.5rem;
@@ -46,17 +50,18 @@ export const Box = styled.div`
 
 export const Section = styled.div`
     background-color: ${props => props.bgcolor};
-    border-radius: 3px;
+    border-radius: 5px;
+    position: relative;
 `
 
 
 export const Element = styled.div`
     background-image: url(${props=> props.url}) ;
     position: absolute;
-    z-index:2;
+    z-index: ${props=> props.zindex};
     background-size: cover;
-    width: 100px;
-    height: 100px; 
+    width: ${props=> props.width};
+    height: ${props=> props.height}; 
     background-repeat: no-repeat; 
     bottom: ${props=> props.bottom};
     top: ${props=> props.top};

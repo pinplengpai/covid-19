@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Text,Section } from '../styles/index';
+import { Text,Section,Element } from '../styles/index';
 import { Row, Col } from 'antd';
+import * as Bgheadline1 from  './images/bgheadline1.png'
+import * as Underline from  './images/underline.png'
+import * as Spot from  './images/spot.png'
+
 import {
   BarChart,
   Bar,
@@ -11,6 +15,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from 'recharts';
+
 
 function BarChartStat() {
   const [data, setData] = useState([]);
@@ -67,10 +72,15 @@ function BarChartStat() {
 
   return (
     <>
+     
+    <Text style={{ marginTop: '3%'}}><h2 style={{ fontWeight: 'bold', marginLeft: '6%' }}>Statistics</h2></Text>
     <Section bgcolor={'#d4d5d6'}>
+      <Element url={Spot} right={'-3%'} top={'-19%'} width={'224px'} height={'210px'} zindex={'2'}/> 
+      <Element url={Bgheadline1} left={'1%'} top={'-51%'} width={'304px'} height={'217px'} zindex={'-1'}/> 
       <Row gutter={[16, 16]} style={{ marginTop: '3%', marginBottom: '8%'}} >
         <Col xl={12} sm={24}>
-          <Text><h3 style={{ marginLeft: '8%', marginBottom: '7%' }}>Age</h3></Text>
+          <Text><h3 style={{ marginLeft: '8%', marginBottom: '7%', fontWeight: 'bold' }}>Age</h3></Text>
+          <Element url={Underline} left={'3%'} top={'-2%'} width={'112px'} height={'110px'} zindex={'2'}/> 
           {isLoading && <div> Loading ... </div>}
           {!isLoading && ageGroup &&
             <BarChart
@@ -87,23 +97,24 @@ function BarChartStat() {
               <Tooltip />
               <Legend />
               <CartesianGrid strokeDasharray="3 3" />
-              <Bar dataKey="age" fill="#EF6830" background={{ fill: '#F6B259' }} />
+              <Bar dataKey="age" fill="#5C715E" background={{ fill: '#aec187' }} />
             </BarChart>
           }
         </Col>
         <Col xl={12} sm={24}>
-          <Text><h3>Gender</h3></Text>
+          <Text><h3 style={{ fontWeight: 'bold' }}>Gender</h3></Text>
+          <Element url={Underline} left={'-3%'} top={'-3%'} width={'119px'} height={'105px'} zindex={'2'}/> 
           {isLoading && <div> Loading ... </div>}
           {!isLoading && genderCount &&
-            <BarChart width={500} height={350} data={genderCount}>
+            <BarChart width={500} height={350} data={genderCount} style={{ marginTop: '2%'}}>
               <CartesianGrid strokeDasharray="2 2" />
               <XAxis dataKey="gender" />
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="male" fill="#EF6330" />
-              <Bar dataKey="female" fill="#F18A6A" />
-              <Bar dataKey="nonbinary" fill="#F1AB88" />
+              <Bar dataKey="male" fill="#3A5335" />
+              <Bar dataKey="female" fill="#5C715E" />
+              <Bar dataKey="nonbinary" fill="#87A08B" />
             </BarChart>
           }
         </Col>

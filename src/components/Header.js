@@ -9,7 +9,6 @@ const HeaderContainer = styled(Layout.Header)`
     display: flex;
     justify-content: center;
     box-shadow:10px 10px 10px rgb(0,0,0,0.2);
-
     li{
         list-style: none;
         display: inline;
