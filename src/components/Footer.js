@@ -42,7 +42,7 @@ function Header() {
                     <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/social-distancing.html">Social Distancing</a></li>
                     <li><a href="https://covid19.workpointnews.com">Situation in Thailand</a></li>
                     <li style={{position:"absolute", right:"2%"}}><a href="https://github.com/pinplengpai">Created by: pinplengpai</a></li>
-                </ul>
+                </ul> 
         </FooterContainer>
     )
 }
