@@ -17,6 +17,7 @@ export const Text = styled.div`
 
 export const ContentContainer = styled(Layout.Content)`
     margin: 0 3% 3% 3%;
+    position: relative;
 `
 
 export const ReportCard = styled(Card)`

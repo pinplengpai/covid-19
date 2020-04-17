@@ -40,7 +40,7 @@ function ThaiData(){
           {!isLoading && data !== undefined && 
            <>
           <Text style={{ marginTop: '3%'}}><h2 style={{ fontWeight: 'bold' }}>Coronavirus Updated in Thailand</h2></Text>
-          <Element url={Bgheadline} left={'-2%'} top={'-26%'} width={'634px'} height={'372px'} zindex={'-1'}/> 
+          <Element url={Bgheadline} left={'-6%'} top={'-17%'} width={'634px'} height={'372px'} zindex={'-1'}/> 
           <Row gutter={[16, 16]}  style={{ marginTop: '3%', marginBottom: '8%'}}>
               <Col xl={6} sm={12}>
                 <Element url={Today} bottom={'-5%'} right={'-13%'} width={'173px'} height={'149px'} zindex={'2'}/> 
