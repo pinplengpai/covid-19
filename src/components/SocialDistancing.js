@@ -8,11 +8,11 @@ import Loading from './Loading';
 import Chart from "react-google-charts";
 
 
-function WorldWide() {
+function SocialDistancingPage() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    async function GlobalData() {
+    async function SocialDistancingData() {
         setIsLoading(true)
         const url = 'https://covid19-cdn.workpointnews.com/api/world.json'
         const response = await axios.get(url);
@@ -35,7 +35,7 @@ function WorldWide() {
     const dataMap = headline.concat(dataCountry)
 
     useEffect(() => {
-        GlobalData();
+        SocialDistancingData();
     }, []);
           
     return(
@@ -91,4 +91,4 @@ function WorldWide() {
     )
 }
 
-export default WorldWide
+export default SocialDistancingPage

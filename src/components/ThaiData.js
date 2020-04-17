@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from "react";
 import Header from './Header';
+import Footer from './Footer';
 import ThaiTimeSeries from './ThaiTimeSeries';
 import BarChart from './BarChart';
 import Loading from './Loading';
@@ -59,6 +60,7 @@ function ThaiData(){
           </>
           }
         </ContentContainer>
+      <Footer />
     </>
   )
 }

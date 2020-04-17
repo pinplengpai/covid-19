@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 
 const HeaderContainer = styled(Layout.Header)`
-    background-color: #F6B259;
+    background-color: #D6E0E4;
     justify-content: space-between;
     display: flex;
     justify-content: center;
-    box-shadow: 5px 5px 5px rgb(0,0,0,0.1);
+    box-shadow:inset 0 15px 5px -16px #111;
+
 
     li{
         list-style: none;
@@ -27,9 +28,10 @@ const HeaderContainer = styled(Layout.Header)`
 function Header() {
     return (
         <HeaderContainer>
-            <ul>
+          <ul>
                 <li> <span role="img" aria-label="Icon">🇹🇭</span> <Link to="/">Thailand</Link></li> | 
-                <li> <span role="img" aria-label="Icon"  >🌍</span> <Link to="/worldwide"> Worldwide</Link></li>
+                <li> <span role="img" aria-label="Icon"  >🌍</span> <Link to="/worldwide"> Worldwide</Link></li> | 
+                <li> <span role="img" aria-label="Icon"  >🔛</span> <Link to="/worldwide"> Social Distancing</Link></li>
             </ul>
         </HeaderContainer>
     )
